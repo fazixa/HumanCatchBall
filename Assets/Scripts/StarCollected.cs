@@ -45,7 +45,7 @@ public Transform prefab;
         {
             case "Ball":
 //                Debug.Break();
-                ScoreScript.score += 5;
+                ScoreScript.score += 25;
                 x = Random.Range(0, 3);
 
 
@@ -58,8 +58,8 @@ public Transform prefab;
 
 
 
-                goal.gameObject.transform.localScale += new Vector3(0.2F,0,0);
-                ground.gameObject.transform.localScale -= new Vector3(0.2F,0,0);
+                goal.gameObject.transform.localScale += new Vector3(0.6F,0,0);
+                ground.gameObject.transform.localScale -= new Vector3(0.6F,0,0);
                 Destroy(gameObject);
                 break;
 

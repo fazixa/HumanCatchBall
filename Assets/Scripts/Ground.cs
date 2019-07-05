@@ -14,7 +14,7 @@ public class Ground : MonoBehaviour
         if (col.rigidbody.velocity.magnitude < 2)
         {
 
-            ScoreScript.score += 10;
+          //  ScoreScript.score += 10;
         }
         else if (col.rigidbody.velocity.magnitude == 0 || col.rigidbody.velocity.magnitude >= 1)
         {

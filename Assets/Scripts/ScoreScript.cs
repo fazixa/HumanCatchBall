@@ -11,6 +11,7 @@ public class ScoreScript : MonoBehaviour
     void Start()
     {
         scoreText = GetComponent<UnityEngine.UI.Text>();
+        scoreText.color= new Color(255,255,255,0.6f);
 
     }
 

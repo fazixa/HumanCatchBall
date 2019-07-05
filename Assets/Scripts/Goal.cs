@@ -46,7 +46,7 @@ public class Goal : MonoBehaviour
         {
             case "Ball":
 //                Debug.Break();
-                ScoreScript.score += 500;
+                ScoreScript.score += 50;
 
 
 
