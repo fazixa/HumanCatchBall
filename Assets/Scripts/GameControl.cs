@@ -10,12 +10,29 @@ public class GameControl : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     private GameObject blower;
     [SerializeField]
     private GameObject human;
-    
+    public Transform prefab;
+
     private GameObject tempBlower;
+    float x;
+    float y;
+    float z;
+    Vector3 pos;
 
     private void Awake()
     {
+
+
+      for (int i = 0; i < 10; i++)
+        {
+            //Instantiate(prefab, new Vector3(i * 2.0F, 0, 0), Quaternion.identity);
+        }
+
+      x = Random.Range(-5, 5);
+      y = Random.Range(-5, 5);
+      z = 5 ;
         Physics.gravity = new Vector3(0, -2, 0);
+        pos = new Vector3(x, y, z);
+        //GameObject.FindGameObjectWithTag ("Star").transform.position = pos;
         StartCoroutine(Generate());
     }
 
@@ -30,7 +47,7 @@ public class GameControl : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         }
     }
 
-    
+
 
     public void OnPointerDown(PointerEventData data)
     {

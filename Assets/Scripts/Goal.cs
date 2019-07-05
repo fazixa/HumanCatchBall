@@ -6,6 +6,8 @@ public class Goal : MonoBehaviour
 {
     // Start is called before the first frame update
 
+    public GameObject goal;
+
 
     public void OnCollisionEnter(Collision col)
     {
@@ -13,10 +15,10 @@ public class Goal : MonoBehaviour
         if (col.rigidbody.velocity.magnitude < 1)
         {
 
-          //  ScoreScript.score += 50;
+            ScoreScript.score += 50;
         }
         else if (col.rigidbody.velocity.magnitude == 0 || col.rigidbody.velocity.magnitude >= 1){
-            Destroy(col.gameObject); }
+            Destroy(col.gameObject); ScoreScript.score += 50;}
     }
 
 
@@ -34,5 +36,21 @@ public class Goal : MonoBehaviour
     void Update()
     {
 
+    }
+
+
+
+    private void OnTriggerEnter(Collider other)
+    {
+        switch (other.gameObject.tag)
+        {
+            case "Ball":
+//                Debug.Break();
+                ScoreScript.score += 500;
+
+
+
+                break;
+        }
     }
 }

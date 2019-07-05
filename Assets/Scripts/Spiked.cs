@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+//using Static UnityEngine.Component;
 
 
 public class Spiked : MonoBehaviour
@@ -18,8 +19,15 @@ public class Spiked : MonoBehaviour
 
     }
 
+ //    IEnumerator ShowMessage (string message, float delay) {
+ //     guiText.text = message;
+ //     guiText.enabled = true;
+ //     yield return new WaitForSeconds(delay);
+ //     guiText.enabled = false;
+ // }
+
     void Restart(){
-      SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+      SceneManager.LoadScene("SampleScene");
 
     }
 
@@ -29,9 +37,11 @@ public class Spiked : MonoBehaviour
         {
             case "Ball":
 //                Debug.Break();
-                ScoreScript.score -= 25;
+                ScoreScript.score = 0;
                 print("ridi");
                 Destroy(other.gameObject);
+                //StartCoroutine(ShowMessage("Abc", 2));
+                //SceneManager.LoadScene("GameOver");
                 Invoke("Restart", 1f);
 
                 break;
